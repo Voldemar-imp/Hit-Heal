@@ -10,12 +10,12 @@ public class HealthControler : MonoBehaviour
     private float _damage = -10;
     private float _heal = 10;
 
-    public void GetDamage()
+    public void GiveDamage()
     {
         _player.TakeDamage(_damage);
     }
 
-    public void GetHeal()
+    public void GiveHeal()
     {
         _player.TakeDamage(_heal);
     }
