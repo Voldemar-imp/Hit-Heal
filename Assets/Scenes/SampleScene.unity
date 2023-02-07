@@ -715,8 +715,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 162483446}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Heal
+        m_TargetAssemblyTypeName: HealthControler, Assembly-CSharp
+        m_MethodName: GetHeal
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -924,8 +924,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 162483446}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
-        m_MethodName: Hit
+        m_TargetAssemblyTypeName: HealthControler, Assembly-CSharp
+        m_MethodName: GetDamage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
