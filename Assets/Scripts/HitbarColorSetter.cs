@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColorChenger : MonoBehaviour
+public class HitbarColorSetter : MonoBehaviour
 {
     [SerializeField] private Image _image;
     [SerializeField] private Slider _slider;
