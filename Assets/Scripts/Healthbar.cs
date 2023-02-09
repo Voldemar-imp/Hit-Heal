@@ -13,7 +13,7 @@ public class Healthbar : MonoBehaviour
     [SerializeField] private Color _colorMaxHealth;
     [SerializeField] private Color _colorMinHealth;
 
-    private Coroutine _FadeInJob;
+    private Coroutine _fadeInJob;
     private float _drawSpeed = 15;
 
     public void Start()
@@ -35,11 +35,11 @@ public class Healthbar : MonoBehaviour
 
     public void DrawCurrentHealth()
     {
-        if (_FadeInJob != null)
+        if (_fadeInJob != null)
         {
-            StopCoroutine(_FadeInJob);
+            StopCoroutine(_fadeInJob);
         }
 
-        _FadeInJob = StartCoroutine (FadeIn());     
+        _fadeInJob = StartCoroutine (FadeIn());     
     }
 }

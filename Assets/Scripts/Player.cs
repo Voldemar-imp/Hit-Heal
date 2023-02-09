@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
+    [SerializeField] private Healthbar _healthbar;
 
     private float _currentHealth;
 
@@ -29,7 +30,8 @@ public class Player : MonoBehaviour
     {
         if (damage > 0)
         {
-            _currentHealth = Mathf.MoveTowards(_currentHealth, _maxHealth, -damage);
+            _currentHealth = Mathf.MoveTowards(_currentHealth, 0, damage);
+            _healthbar.DrawCurrentHealth();
         }
     }
 
@@ -38,6 +40,7 @@ public class Player : MonoBehaviour
         if (heal > 0)
         {
             _currentHealth = Mathf.MoveTowards(_currentHealth, _maxHealth, heal);
+            _healthbar.DrawCurrentHealth();
         }
     }
 }

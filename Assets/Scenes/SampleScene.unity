@@ -241,9 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b6ca2d03ef8eb4a8cc3dc6cad19cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 441936487}
-  _damage: -10
-  _heal: 10
 --- !u!1 &441936482
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,6 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 111
+  _healthbar: {fileID: 1679640238}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -727,18 +725,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1679640238}
-        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
-        m_MethodName: DrawCurrentHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1516412894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -948,18 +934,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1679640238}
-        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
-        m_MethodName: DrawCurrentHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1578117278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1102,18 +1076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec04f2e637aacd34aa92c0a039d4b98f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _image: {fileID: 1767046353}
-  _slider: {fileID: 1679640236}
-  _colorMaxHealth:
-    r: 0
-    g: 1
-    b: 0.015367031
-    a: 1
-  _colorMinHealth:
-    r: 1
-    g: 0
-    b: 0
-    a: 1
 --- !u!114 &1679640238
 MonoBehaviour:
   m_ObjectHideFlags: 0
