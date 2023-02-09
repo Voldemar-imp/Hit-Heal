@@ -1,9 +1,7 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Healthbar : MonoBehaviour
 {
@@ -16,12 +14,23 @@ public class Healthbar : MonoBehaviour
     private Coroutine _fadeInJob;
     private float _drawSpeed = 15;
 
-    public void Start()
+    private void Start()
     {
         _slider.maxValue = _player.MaxHealth;
         _slider.value = _player.MaxHealth;
         _image.color = _colorMaxHealth;
     }
+
+    private void OnEnable()
+    {
+        _player.HealthChenged += OnHealthChenged;
+    }
+
+    private void OnDisable()
+    {
+        _player.HealthChenged -= OnHealthChenged;
+    }
+
 
     private IEnumerator FadeIn()
     {
@@ -33,7 +42,7 @@ public class Healthbar : MonoBehaviour
         }
     }
 
-    public void DrawCurrentHealth()
+    private void OnHealthChenged()
     {
         if (_fadeInJob != null)
         {
