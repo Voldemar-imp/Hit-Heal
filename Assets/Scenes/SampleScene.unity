@@ -242,6 +242,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 441936487}
+  _damage: -10
+  _heal: 10
 --- !u!1 &441936482
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +388,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 111
-  _slider: {fileID: 1679640236}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,9 +715,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162483446}
-        m_TargetAssemblyTypeName: HealthControler, Assembly-CSharp
-        m_MethodName: GiveHeal
+      - m_Target: {fileID: 441936487}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeHeal
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1679640238}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: DrawCurrentHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -923,9 +936,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 162483446}
-        m_TargetAssemblyTypeName: HealthControler, Assembly-CSharp
-        m_MethodName: GiveDamage
+      - m_Target: {fileID: 441936487}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: TakeDamage
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 10
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1679640238}
+        m_TargetAssemblyTypeName: Healthbar, Assembly-CSharp
+        m_MethodName: DrawCurrentHealth
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -984,6 +1009,7 @@ GameObject:
   - component: {fileID: 1679640235}
   - component: {fileID: 1679640236}
   - component: {fileID: 1679640237}
+  - component: {fileID: 1679640238}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1059,23 +1085,11 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 10
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 10
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1679640237}
-        m_TargetAssemblyTypeName: ColorChenger, Assembly-CSharp
-        m_MethodName: FadeIn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1679640237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1104,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 1767046353}
   _slider: {fileID: 1679640236}
-  _colorMaxHealth: {r: 0, g: 1, b: 0.015367031, a: 1}
+  _colorMaxHealth:
+    r: 0
+    g: 1
+    b: 0.015367031
+    a: 1
+  _colorMinHealth:
+    r: 1
+    g: 0
+    b: 0
+    a: 1
+--- !u!114 &1679640238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1679640234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64f7a96da2aff814194ce94a9e3b4d70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _image: {fileID: 1767046353}
+  _slider: {fileID: 1679640236}
+  _player: {fileID: 441936487}
+  _colorMaxHealth: {r: 0.15686275, g: 0.39607847, b: 0, a: 1}
   _colorMinHealth: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1767046351
 GameObject:

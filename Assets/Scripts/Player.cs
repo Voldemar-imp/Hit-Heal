@@ -6,29 +6,38 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
-    [SerializeField] private Slider _slider;
 
-    private float _minHealth = 10;
     private float _currentHealth;
+
+    public float CurrentHealth => _currentHealth;
+    public float MaxHealth => _maxHealth;
 
     private void Start()
     {
         _currentHealth = _maxHealth;
-        _slider.maxValue = _maxHealth;
-        _slider.value = _currentHealth;
     }
 
     private void OnValidate()
     {
-        if (_maxHealth < _minHealth)
+        if (_maxHealth < 0)
         {
-            _maxHealth = _minHealth;
+            _maxHealth = 0;
         }
     }
 
-    public void TakeDamage(float gamage)
+    public void TakeDamage(float damage)
     {
-        _currentHealth = Mathf.MoveTowards(_currentHealth, _maxHealth, gamage);
-        _slider.value = _currentHealth;
+        if (damage > 0)
+        {
+            _currentHealth = Mathf.MoveTowards(_currentHealth, _maxHealth, -damage);
+        }
+    }
+
+    public void TakeHeal(float heal)
+    {
+        if (heal > 0)
+        {
+            _currentHealth = Mathf.MoveTowards(_currentHealth, _maxHealth, heal);
+        }
     }
 }
