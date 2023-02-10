@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float _maxHealth;
 
     private float _currentHealth;
+    private float _minHealth = 0;
     public Action HealthChenged;
 
     public float CurrentHealth => _currentHealth;
@@ -33,7 +34,7 @@ public class Player : MonoBehaviour
     {
         if (damage > 0)
         {
-            _currentHealth = Mathf.MoveTowards(_currentHealth, 0, damage);
+            _currentHealth = Mathf.MoveTowards(_currentHealth, _minHealth, damage);
             HealthChenged?.Invoke();
         }
     }
